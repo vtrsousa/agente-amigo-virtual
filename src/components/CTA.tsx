@@ -20,21 +20,18 @@ const CTA = () => {
               dos seus clientes com agentes de IA inteligentes.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-glow group">
-                Começar Gratuitamente
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                <Mail className="mr-2 w-4 h-4" />
-                Falar com Especialista
-              </Button>
-            </div>
-            
-            <p className="text-sm text-muted-foreground mt-8">
-              Sem cartão de crédito • Configuração em minutos • Suporte em português
-            </p>
           </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button size="lg" className="shadow-glow group">
+            <Mail className="mr-2 w-5 h-5" />
+            Falar com Especialista
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <p className="text-sm text-muted-foreground mt-4">
+            Sem cartão de crédito • Configuração em minutos • Suporte em português
+          </p>
         </div>
       </div>
     </section>

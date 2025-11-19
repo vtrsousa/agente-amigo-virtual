@@ -48,7 +48,7 @@ const HowItWorks = () => {
                 
                 {/* Content */}
                 <div className="md:col-span-10">
-                  <div className="gradient-card p-8 rounded-3xl shadow-soft relative overflow-hidden">
+                  <div className="gradient-subtle p-8 rounded-3xl shadow-soft relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
                     <div className="relative">
                       <div className="flex items-start gap-4">

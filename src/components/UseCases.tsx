@@ -47,7 +47,7 @@ const UseCases = () => {
             return (
               <Card 
                 key={index}
-                className="p-8 gradient-card shadow-soft hover:shadow-glow transition-smooth group animate-fade-in"
+                className="p-8 gradient-subtle shadow-soft hover:shadow-glow transition-smooth group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth">

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-ai-service.jpg";
+import { ArrowRight, MessageCircle, Zap, Calendar, Brain, Building2 } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -13,25 +12,25 @@ const Hero = () => {
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Content */}
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Inovação em Atendimento</span>
+              <MessageCircle className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Olá! Eu sou a Kora da Koraflow</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              Agentes de IA que Revolucionam o Atendimento
+              As Melhores Soluções de IA para o Atendimento do Seu Negócio
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
               Transforme a experiência dos seus clientes com atendimento personalizado, 
               inteligente e disponível 24/7. Nossa tecnologia de IA aprende e se adapta 
               para oferecer soluções precisas.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" className="shadow-glow group">
                 Começar Agora
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -41,31 +40,25 @@ const Hero = () => {
               </Button>
             </div>
             
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
-              <div>
-                <div className="text-3xl font-bold text-primary">98%</div>
-                <div className="text-sm text-muted-foreground">Satisfação</div>
+            {/* Feature Badges */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto">
+              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Zap className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">Respostas Rápidas</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">Disponibilidade</div>
+              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Calendar className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">Agenda Automática</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">-60%</div>
-                <div className="text-sm text-muted-foreground">Custos</div>
+              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Brain className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">CRM Inteligente</div>
+              </div>
+              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Building2 className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">Multi Negócios</div>
               </div>
             </div>
-          </div>
-          
-          {/* Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl" />
-            <img 
-              src={heroImage} 
-              alt="AI Customer Service Interface" 
-              className="relative rounded-3xl shadow-soft w-full h-auto object-cover"
-            />
           </div>
         </div>
       </div>

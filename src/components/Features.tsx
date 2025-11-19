@@ -53,7 +53,7 @@ const Features = () => {
             return (
               <Card 
                 key={index}
-                className="p-8 gradient-card shadow-soft hover:shadow-glow transition-smooth hover:-translate-y-2 animate-fade-in"
+                className="p-8 gradient-subtle shadow-soft hover:shadow-glow transition-smooth hover:-translate-y-2 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
