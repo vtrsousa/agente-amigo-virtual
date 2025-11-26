@@ -5,11 +5,11 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 gradient-hero opacity-10" />
+      <div className="absolute inset-0 gradient-hero opacity-5" />
       
       {/* Animated background elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -17,11 +17,11 @@ const Hero = () => {
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
               <MessageCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Olá! Eu sou a Kora da Koraflow</span>
+              <span className="text-sm font-medium">Olá! Eu sou a <span className="text-primary font-bold">Kora</span> da Koraflow</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              As Melhores Soluções de IA para o Atendimento do Seu Negócio
+              As <span className="text-primary">Melhores Soluções</span> de IA para o Atendimento do Seu Negócio
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
@@ -41,22 +41,22 @@ const Hero = () => {
             </div>
             
             {/* Feature Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto">
-              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Zap className="w-6 h-6 text-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-primary">Respostas Rápidas</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12 max-w-3xl mx-auto">
+              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Zap className="w-4 h-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold text-primary">Respostas Rápidas</div>
               </div>
-              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Calendar className="w-6 h-6 text-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-primary">Agenda Automática</div>
+              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Calendar className="w-4 h-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold text-primary">Agenda Automática</div>
               </div>
-              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Brain className="w-6 h-6 text-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-primary">CRM Inteligente</div>
+              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Brain className="w-4 h-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold text-primary">CRM Inteligente</div>
               </div>
-              <div className="gradient-subtle px-6 py-4 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Building2 className="w-6 h-6 text-primary mx-auto mb-2" />
-                <div className="text-sm font-semibold text-primary">Multi Negócios</div>
+              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
+                <Building2 className="w-4 h-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold text-primary">Multi Negócios</div>
               </div>
             </div>
           </div>

@@ -10,28 +10,19 @@ const CTA = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="gradient-card p-12 lg:p-16 rounded-3xl shadow-glow text-center animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Pronto para Revolucionar seu Atendimento?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Junte-se a centenas de empresas que já transformaram a experiência 
-              dos seus clientes com agentes de IA inteligentes.
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              className="shadow-glow hover:shadow-[0_0_60px_hsl(256_60%_36%/0.3)] px-10 py-6 text-lg font-semibold group transition-all duration-300 hover:scale-105"
+            >
+              Falar com Especialista
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <p className="text-sm text-muted-foreground mt-6">
+              Sem cartão de crédito • Configuração em minutos • Suporte em português
             </p>
-            
           </div>
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button size="lg" className="shadow-glow group">
-            <Mail className="mr-2 w-5 h-5" />
-            Falar com Especialista
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <p className="text-sm text-muted-foreground mt-4">
-            Sem cartão de crédito • Configuração em minutos • Suporte em português
-          </p>
         </div>
       </div>
     </section>
