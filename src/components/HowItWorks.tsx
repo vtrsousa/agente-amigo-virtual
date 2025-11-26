@@ -3,18 +3,18 @@ import { CheckCircle2 } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "Configure seu Agente",
-    description: "Personalize o agente de IA com a identidade da sua marca, tom de voz e conhecimento específico do seu negócio em minutos."
+    title: "Treinamento Personalizado",
+    description: "Seu agente aprende tudo sobre seu negócio, produtos, serviços e a forma como você se comunica com clientes."
   },
   {
     number: "02",
-    title: "Integre aos Canais",
-    description: "Conecte o agente aos seus canais de atendimento: site, WhatsApp, redes sociais e sistemas existentes com poucos cliques."
+    title: "Atendimento 24/7",
+    description: "Nunca mais perca um cliente. Seu agente trabalha incansavelmente, respondendo em segundos, a qualquer hora."
   },
   {
     number: "03",
-    title: "Atenda com Excelência",
-    description: "Deixe a IA trabalhar 24/7 enquanto você monitora métricas, analisa insights e melhora continuamente o atendimento."
+    title: "Evolução Contínua",
+    description: "O agente nunca falha em aprender. A cada interação, ele se torna mais inteligente e eficiente."
   }
 ];
 
@@ -27,7 +27,7 @@ const HowItWorks = () => {
             Como Funciona
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Três passos simples para revolucionar seu atendimento ao cliente
+            Um agente inteligente treinado especificamente para o seu negócio, que nunca dorme, nunca falha e trabalha incansavelmente para você
           </p>
         </div>
         
