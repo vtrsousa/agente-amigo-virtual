@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, Zap, Calendar, Brain, Building2 } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -31,33 +31,21 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="shadow-glow group">
+              <Button 
+                size="lg" 
+                className="shadow-glow group"
+                onClick={() => {
+                  const chatButton = document.getElementById('chat-button');
+                  chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  chatButton?.click();
+                }}
+              >
                 Começar Agora
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline">
                 Ver Demonstração
               </Button>
-            </div>
-            
-            {/* Feature Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12 max-w-3xl mx-auto">
-              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Zap className="w-4 h-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold text-primary">Respostas Rápidas</div>
-              </div>
-              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Calendar className="w-4 h-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold text-primary">Agenda Automática</div>
-              </div>
-              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Brain className="w-4 h-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold text-primary">CRM Inteligente</div>
-              </div>
-              <div className="gradient-subtle px-4 py-2 rounded-2xl border border-primary/20 hover:border-primary/40 transition-smooth">
-                <Building2 className="w-4 h-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold text-primary">Multi Negócios</div>
-              </div>
             </div>
           </div>
         </div>

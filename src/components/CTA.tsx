@@ -11,10 +11,24 @@ const CTA = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Tecnologia avançada + assessoria estratégica
+          </h2>
+          <p className="text-lg text-muted-foreground mb-4">
+            Não somos apenas mais uma agência de tecnologia. Na Koraflow, combinamos expertise técnica com pensamento estratégico.
+          </p>
+          <p className="text-lg text-muted-foreground mb-10">
+            Nossa abordagem é colaborativa e transparente, garantindo que você esteja envolvido em cada etapa da jornada rumo à transformação com IA.
+          </p>
           <div className="text-center">
             <Button 
               size="lg" 
               className="shadow-glow hover:shadow-[0_0_60px_hsl(256_60%_36%/0.3)] px-10 py-6 text-lg font-semibold group transition-all duration-300 hover:scale-105"
+              onClick={() => {
+                const chatButton = document.getElementById('chat-button');
+                chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                chatButton?.click();
+              }}
             >
               Falar com Especialista
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

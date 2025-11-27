@@ -4,7 +4,9 @@ import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import UseCases from "@/components/UseCases";
 import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import ChatButton from "@/components/ChatButton";
 
 const Index = () => {
   return (
@@ -15,7 +17,9 @@ const Index = () => {
       <HowItWorks />
       <UseCases />
       <CTA />
+      <FAQ />
       <Footer />
+      <ChatButton />
     </main>
   );
 };
