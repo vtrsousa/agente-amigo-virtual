@@ -8,9 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Roxo Tecnológico como destaque (5-10%) */
+    --violet: 256 100% 68%;              /* #7A5CFF - Roxo Tecnológico */
+    --violet-foreground: 0 0% 100%;      /* Branco */
+    
     /* Paleta Minimalista - Light Mode */
-    --background: 210 10% 97%;           /* #F5F6F7 - branco off-white */
-    --foreground: 240 15% 4%;            /* #0B0B0D - preto profundo */
+    --background: 210 10% 97%;           /* #F5F6F7 - branco off-white (20-30%) */
+    --foreground: 240 15% 4%;            /* #0B0B0D - preto profundo (50-60%) */
 
     --card: 0 0% 100%;
     --card-foreground: 240 15% 4%;
@@ -18,50 +22,54 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 15% 4%;
 
-    --primary: 240 15% 4%;               /* Preto como primário */
-    --primary-foreground: 210 10% 97%;
+    --primary: 256 100% 68%;             /* Roxo como primário para CTAs */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 10% 93%;            /* Cinza claro */
+    --secondary: 210 10% 93%;            /* Cinza claro (10-15%) */
     --secondary-foreground: 240 15% 4%;
 
     --muted: 210 10% 93%;
     --muted-foreground: 215 7% 57%;      /* #8A8F98 - cinza médio */
 
-    --accent: 215 7% 57%;                /* Cinza como acento */
-    --accent-foreground: 240 15% 4%;
+    --accent: 256 100% 68%;              /* Roxo como acento */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 10% 97%;
 
     --border: 210 10% 88%;
     --input: 210 10% 88%;
-    --ring: 240 15% 4%;
+    --ring: 256 100% 68%;
 
     --radius: 0.75rem;
     
-    /* Gradientes minimalistas */
-    --gradient-hero: linear-gradient(135deg, hsl(240 15% 4%) 0%, hsl(240 10% 12%) 100%);
+    /* Gradientes com roxo */
+    --gradient-hero: linear-gradient(135deg, hsl(240 15% 4%) 0%, hsl(240 10% 8%) 100%);
     --gradient-card: linear-gradient(to bottom right, hsl(0 0% 100%) 0%, hsl(210 10% 97%) 100%);
-    --gradient-subtle: linear-gradient(135deg, hsl(215 7% 57% / .03) 0%, hsl(215 7% 57% / .01) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(256 100% 68% / .03) 0%, hsl(256 100% 68% / .01) 100%);
     --shadow-soft: 0 4px 20px -4px hsl(240 15% 4% / 0.08);
-    --shadow-glow: 0 0 40px hsl(240 15% 4% / 0.12);
+    --shadow-glow: 0 0 30px hsl(256 100% 68% / 0.25);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 15% 4%;
-    --sidebar-primary-foreground: 210 10% 97%;
+    --sidebar-primary: 256 100% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 10% 93%;
     --sidebar-accent-foreground: 240 15% 4%;
     --sidebar-border: 210 10% 88%;
-    --sidebar-ring: 240 15% 4%;
+    --sidebar-ring: 256 100% 68%;
   }
 
   .dark {
+    /* Roxo Tecnológico como destaque (5-10%) */
+    --violet: 256 100% 68%;              /* #7A5CFF - Roxo Tecnológico */
+    --violet-foreground: 0 0% 100%;      /* Branco */
+    
     /* Paleta Minimalista - Dark Mode (Principal) */
-    --background: 240 15% 4%;            /* #0B0B0D - preto profundo */
-    --foreground: 210 10% 97%;           /* #F5F6F7 - branco off-white */
+    --background: 240 15% 4%;            /* #0B0B0D - preto profundo (50-60%) */
+    --foreground: 210 10% 97%;           /* #F5F6F7 - branco off-white (20-30%) */
 
     --card: 240 10% 8%;                  /* Preto mais claro para cards */
     --card-foreground: 210 10% 97%;
@@ -69,40 +77,40 @@ All colors MUST be HSL.
     --popover: 240 10% 8%;
     --popover-foreground: 210 10% 97%;
 
-    --primary: 210 10% 97%;              /* Branco como primário */
-    --primary-foreground: 240 15% 4%;
+    --primary: 256 100% 68%;             /* Roxo como primário para CTAs */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 10% 12%;            /* Cinza escuro */
+    --secondary: 240 10% 12%;            /* Cinza escuro (10-15%) */
     --secondary-foreground: 210 10% 97%;
 
     --muted: 240 10% 12%;
     --muted-foreground: 215 7% 57%;      /* #8A8F98 - cinza médio */
 
-    --accent: 215 7% 57%;                /* Cinza como acento */
-    --accent-foreground: 210 10% 97%;
+    --accent: 256 100% 68%;              /* Roxo como acento */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 10% 97%;
 
     --border: 240 10% 15%;
     --input: 240 10% 15%;
-    --ring: 210 10% 97%;
+    --ring: 256 100% 68%;
     
-    /* Gradientes minimalistas - Dark Mode */
+    /* Gradientes com roxo - Dark Mode */
     --gradient-hero: linear-gradient(135deg, hsl(240 15% 4%) 0%, hsl(240 10% 8%) 100%);
     --gradient-card: linear-gradient(to bottom right, hsl(240 10% 8%) 0%, hsl(240 10% 12%) 100%);
-    --gradient-subtle: linear-gradient(135deg, hsl(215 7% 57% / .05) 0%, hsl(215 7% 57% / .02) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(256 100% 68% / .05) 0%, hsl(256 100% 68% / .02) 100%);
     --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-glow: 0 0 40px hsl(215 7% 57% / 0.1);
+    --shadow-glow: 0 0 30px hsl(256 100% 68% / 0.35);
     
     --sidebar-background: 240 15% 4%;
     --sidebar-foreground: 210 10% 97%;
-    --sidebar-primary: 210 10% 97%;
-    --sidebar-primary-foreground: 240 15% 4%;
+    --sidebar-primary: 256 100% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 10% 12%;
     --sidebar-accent-foreground: 210 10% 97%;
     --sidebar-border: 240 10% 15%;
-    --sidebar-ring: 210 10% 97%;
+    --sidebar-ring: 256 100% 68%;
   }
 }
 
@@ -143,6 +151,31 @@ All colors MUST be HSL.
   
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  /* Grid pattern tecnológico */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--violet) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--violet) / 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  /* Linhas diagonais animadas */
+  .animated-lines {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 80px,
+      hsl(var(--violet) / 0.03) 80px,
+      hsl(var(--violet) / 0.03) 81px
+    );
+    animation: moveLines 25s linear infinite;
+  }
+  
+  @keyframes moveLines {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(113px); }
   }
   
   /* Float animation */
@@ -288,8 +321,8 @@ All colors MUST be HSL.
   .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 
-      0 20px 40px -15px hsl(240 15% 4% / 0.12),
-      0 0 30px hsl(215 7% 57% / 0.08);
+      0 20px 40px -15px hsl(240 15% 4% / 0.15),
+      0 0 30px hsl(var(--violet) / 0.15);
   }
   
   /* Scroll animation states */
@@ -335,17 +368,17 @@ All colors MUST be HSL.
     transform: rotate(5deg) scale(1.1);
   }
   
-  /* Pulse glow effect */
+  /* Pulse glow effect com roxo */
   .pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
   }
   
   @keyframes pulseGlow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(215 7% 57% / 0.25);
+      box-shadow: 0 0 20px hsl(var(--violet) / 0.3);
     }
     50% {
-      box-shadow: 0 0 40px hsl(215 7% 57% / 0.45);
+      box-shadow: 0 0 40px hsl(var(--violet) / 0.5);
     }
   }
 }

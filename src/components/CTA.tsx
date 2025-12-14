@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const CTA = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 gradient-hero opacity-5" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Tecnologia avançada + assessoria estratégica
+            Tecnologia <span className="text-violet">avançada</span> + assessoria estratégica
           </h2>
           <p className="text-lg text-muted-foreground mb-4">
             Não somos apenas mais uma agência de tecnologia. Na Koraflow, combinamos expertise técnica com pensamento estratégico.
@@ -23,7 +23,7 @@ const CTA = () => {
           <div className="text-center">
             <Button 
               size="lg" 
-              className="shadow-glow hover:shadow-[0_0_60px_hsl(215_7%_57%/0.3)] px-10 py-6 text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect"
+              className="shadow-glow hover:shadow-[0_0_60px_hsl(var(--violet)/0.4)] px-10 py-6 text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
               onClick={() => {
                 const chatButton = document.getElementById('chat-button');
                 chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });

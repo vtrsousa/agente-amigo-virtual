@@ -19,7 +19,7 @@ const Footer = () => {
               href="https://instagram.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-smooth"
+              className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
@@ -28,14 +28,14 @@ const Footer = () => {
               href="https://facebook.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-smooth"
+              className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a 
               href="mailto:contato@koraflow.com"
-              className="text-muted-foreground hover:text-foreground transition-smooth"
+              className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />

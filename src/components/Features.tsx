@@ -47,7 +47,7 @@ const Features = () => {
           className={`text-center mb-12 md:mb-16 scroll-hidden ${headerVisible ? 'scroll-visible' : ''}`}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-            Recursos Que Fazem a Diferença
+            Recursos Que <span className="text-violet">Fazem a Diferença</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Tecnologia de ponta para transformar cada interação em uma experiência excepcional
@@ -60,10 +60,10 @@ const Features = () => {
             return (
               <Card 
                 key={index}
-                className={`p-6 md:p-8 gradient-subtle shadow-soft card-hover group scroll-hidden stagger-${index + 1} ${gridVisible ? 'scroll-visible' : ''}`}
+                className={`p-6 md:p-8 gradient-subtle shadow-soft card-hover group scroll-hidden stagger-${index + 1} ${gridVisible ? 'scroll-visible' : ''} border-border hover:border-violet/30`}
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-primary/10 transition-colors">
-                  <Icon className="w-6 h-6 md:w-7 md:h-7 text-primary icon-hover" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-violet/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-violet/20 transition-colors">
+                  <Icon className="w-6 h-6 md:w-7 md:h-7 text-violet icon-hover" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{feature.title}</h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
