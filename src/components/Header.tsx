@@ -34,7 +34,7 @@ const Header = () => {
             
             <Button 
               onClick={handleStartNow}
-              className="shadow-glow"
+              className="shadow-glow shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
               size="sm"
             >
               <span className="hidden sm:inline">Começar Agora</span>

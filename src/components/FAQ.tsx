@@ -51,7 +51,7 @@ const FAQ = () => {
             className={`text-center mb-12 md:mb-16 scroll-hidden ${headerVisible ? 'scroll-visible' : ''}`}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-              Dúvidas Frequentes
+              Dúvidas <span className="text-violet">Frequentes</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground">
               Encontre respostas para as principais questões sobre nossas soluções de IA.
@@ -66,7 +66,7 @@ const FAQ = () => {
                   value={`item-${index}`}
                   className={`scroll-hidden stagger-${index + 1} ${accordionVisible ? 'scroll-visible' : ''}`}
                 >
-                  <AccordionTrigger className="text-left text-base md:text-lg hover:text-primary transition-colors">
+                  <AccordionTrigger className="text-left text-base md:text-lg hover:text-violet transition-colors">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm md:text-base text-muted-foreground">
@@ -79,7 +79,7 @@ const FAQ = () => {
 
           <div 
             ref={ctaRef}
-            className={`bg-gradient-card rounded-2xl p-6 md:p-8 text-center border border-border/50 scroll-hidden ${ctaVisible ? 'scroll-visible' : ''}`}
+            className={`bg-gradient-card rounded-2xl p-6 md:p-8 text-center border border-border/50 hover:border-violet/30 transition-colors scroll-hidden ${ctaVisible ? 'scroll-visible' : ''}`}
           >
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
               Não encontrou sua resposta?
@@ -89,7 +89,7 @@ const FAQ = () => {
             </p>
             <Button 
               size="lg"
-              className="shadow-glow hover:shadow-[0_0_60px_hsl(215_7%_57%/0.3)] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect"
+              className="shadow-glow hover:shadow-[0_0_60px_hsl(var(--violet)/0.4)] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
               onClick={() => {
                 const chatButton = document.getElementById('chat-button');
                 chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });

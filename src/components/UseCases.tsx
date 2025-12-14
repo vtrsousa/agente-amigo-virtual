@@ -41,7 +41,7 @@ const UseCases = () => {
           className={`text-center mb-12 md:mb-16 scroll-hidden ${headerVisible ? 'scroll-visible' : ''}`}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-            Casos de Uso Comprovados
+            Casos de Uso <span className="text-violet">Comprovados</span>
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Empresas de diversos setores já transformaram seu atendimento
@@ -54,17 +54,17 @@ const UseCases = () => {
             return (
               <Card 
                 key={index}
-                className={`p-6 md:p-8 gradient-subtle shadow-soft card-hover group scroll-hidden stagger-${index + 1} ${gridVisible ? 'scroll-visible' : ''}`}
+                className={`p-6 md:p-8 gradient-subtle shadow-soft card-hover group scroll-hidden stagger-${index + 1} ${gridVisible ? 'scroll-visible' : ''} border-border hover:border-violet/30`}
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-primary/10 transition-colors">
-                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary icon-hover" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-violet/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-violet/20 transition-colors">
+                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-violet icon-hover" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">{useCase.title}</h3>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3 md:mb-4">
                   {useCase.description}
                 </p>
                 <div className="pt-3 md:pt-4 border-t border-border">
-                  <span className="text-xs md:text-sm font-semibold text-primary">
+                  <span className="text-xs md:text-sm font-semibold text-violet">
                     {useCase.metrics}
                   </span>
                 </div>
