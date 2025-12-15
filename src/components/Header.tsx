@@ -1,4 +1,4 @@
-import logo from "@/assets/Logo-Koraflow.png";
+import logo from "@/assets/Logo-Koraflow-2.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";

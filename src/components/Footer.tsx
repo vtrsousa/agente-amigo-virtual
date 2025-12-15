@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Mail } from "lucide-react";
-import logo from "@/assets/Logo-Koraflow.png";
+import logo from "@/assets/Logo-Koraflow-2.png";
 
 const Footer = () => {
   return (

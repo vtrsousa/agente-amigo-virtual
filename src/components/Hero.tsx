@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Play } from "lucide-react";
+import DemoPopup from "./DemoPopup";
 
 const Hero = () => {
+  const [showDemo, setShowDemo] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-background">
       {/* Grid pattern background */}
@@ -65,13 +69,22 @@ const Hero = () => {
                 Começar Agora
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="hover:scale-105 transition-transform border-border hover:border-violet/50 hover:text-violet">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="hover:scale-105 transition-transform border-border hover:border-violet/50 hover:text-violet group"
+                onClick={() => setShowDemo(true)}
+              >
+                <Play className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
                 Ver Demonstração
               </Button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Demo Popup */}
+      <DemoPopup open={showDemo} onOpenChange={setShowDemo} />
     </section>
   );
 };
