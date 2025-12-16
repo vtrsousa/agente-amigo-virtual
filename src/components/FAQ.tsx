@@ -90,11 +90,7 @@ const FAQ = () => {
             <Button 
               size="lg"
               className="shadow-glow hover:shadow-[0_0_60px_hsl(var(--violet)/0.4)] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
-              onClick={() => {
-                const chatButton = document.getElementById('chat-button');
-                chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                setTimeout(() => chatButton?.click(), 300);
-              }}
+              onClick={() => window.open('https://w.app/koraflow', '_blank')}
             >
               Falar com Especialista
               <ArrowRight className="ml-2 w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />

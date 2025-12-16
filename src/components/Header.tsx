@@ -7,9 +7,7 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   const handleStartNow = () => {
-    const chatButton = document.getElementById('chat-button');
-    chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => chatButton?.click(), 300);
+    window.open('https://w.app/koraflow', '_blank');
   };
 
   return (

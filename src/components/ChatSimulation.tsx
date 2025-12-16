@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, Phone, Video, MoreVertical } from "lucide-react";
 
@@ -69,6 +69,7 @@ interface ChatSimulationProps {
 const ChatSimulation = ({ niche }: ChatSimulationProps) => {
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
   const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const messages = conversations[niche] || conversations.clinica;
 
   useEffect(() => {
@@ -90,8 +91,13 @@ const ChatSimulation = ({ niche }: ChatSimulationProps) => {
     }
   }, [visibleMessages, messages.length]);
 
+  // Auto-scroll when messages appear
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [visibleMessages, isTyping]);
+
   return (
-    <div className="mx-auto w-full max-w-[280px]">
+    <div className="mx-auto w-full max-w-[260px] sm:max-w-[280px] md:max-w-[320px]">
       {/* Phone Frame */}
       <div className="relative bg-zinc-900 rounded-[2.5rem] p-2 shadow-2xl border-4 border-zinc-700">
         {/* Dynamic Island / Notch */}
@@ -118,56 +124,59 @@ const ChatSimulation = ({ niche }: ChatSimulationProps) => {
           
           {/* Chat Area with WhatsApp pattern background */}
           <div 
-            className="h-[320px] overflow-y-auto p-3 relative"
+            className="h-[300px] sm:h-[340px] md:h-[380px] overflow-hidden"
             style={{
               backgroundColor: '#0b141a',
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23182229' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
             }}
           >
-            <div className="space-y-2">
-              {messages.slice(0, visibleMessages).map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={cn(
-                    "flex animate-fade-in",
-                    msg.role === 'cliente' ? 'justify-end' : 'justify-start'
-                  )}
-                >
+            <div className="h-full overflow-y-auto scrollbar-hide p-3">
+              <div className="space-y-2">
+                {messages.slice(0, visibleMessages).map((msg, idx) => (
                   <div
+                    key={idx}
                     className={cn(
-                      "max-w-[85%] px-3 py-1.5 text-xs text-white relative",
-                      msg.role === 'cliente'
-                        ? 'bg-[#005c4b] rounded-lg rounded-tr-none'
-                        : 'bg-[#1f2c34] rounded-lg rounded-tl-none'
+                      "flex animate-fade-in",
+                      msg.role === 'cliente' ? 'justify-end' : 'justify-start'
                     )}
                   >
-                    {msg.text}
-                    <span className="text-[10px] text-gray-400 ml-2 float-right mt-1">
-                      {new Date().getHours()}:{String(new Date().getMinutes()).padStart(2, '0')}
-                    </span>
-                  </div>
-                </div>
-              ))}
-              
-              {isTyping && visibleMessages < messages.length && (
-                <div className={cn(
-                  "flex",
-                  messages[visibleMessages].role === 'cliente' ? 'justify-end' : 'justify-start'
-                )}>
-                  <div className={cn(
-                    "px-3 py-2 rounded-lg text-xs",
-                    messages[visibleMessages].role === 'cliente'
-                      ? 'bg-[#005c4b] rounded-tr-none'
-                      : 'bg-[#1f2c34] rounded-tl-none'
-                  )}>
-                    <div className="flex gap-1">
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <div
+                      className={cn(
+                        "max-w-[85%] px-3 py-1.5 text-xs text-white relative",
+                        msg.role === 'cliente'
+                          ? 'bg-[#005c4b] rounded-lg rounded-tr-none'
+                          : 'bg-[#1f2c34] rounded-lg rounded-tl-none'
+                      )}
+                    >
+                      {msg.text}
+                      <span className="text-[10px] text-gray-400 ml-2 float-right mt-1">
+                        {new Date().getHours()}:{String(new Date().getMinutes()).padStart(2, '0')}
+                      </span>
                     </div>
                   </div>
-                </div>
-              )}
+                ))}
+                
+                {isTyping && visibleMessages < messages.length && (
+                  <div className={cn(
+                    "flex",
+                    messages[visibleMessages].role === 'cliente' ? 'justify-end' : 'justify-start'
+                  )}>
+                    <div className={cn(
+                      "px-3 py-2 rounded-lg text-xs",
+                      messages[visibleMessages].role === 'cliente'
+                        ? 'bg-[#005c4b] rounded-tr-none'
+                        : 'bg-[#1f2c34] rounded-tl-none'
+                    )}>
+                      <div className="flex gap-1">
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
             </div>
           </div>
           

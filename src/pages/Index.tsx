@@ -5,7 +5,6 @@ import HowItWorks from "@/components/HowItWorks";
 import UseCases from "@/components/UseCases";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import ChatButton from "@/components/ChatButton";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <UseCases />
       <FAQ />
       <Footer />
-      <ChatButton />
     </main>
   );
 };

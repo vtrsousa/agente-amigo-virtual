@@ -81,14 +81,12 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
 
   const handleTalkToSpecialist = () => {
     onOpenChange(false);
-    const chatButton = document.getElementById('chat-button');
-    chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => chatButton?.click(), 300);
+    window.open('https://w.app/koraflow', '_blank');
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-6xl h-[85vh] overflow-hidden p-0 gap-0">
+      <DialogContent className="max-w-6xl h-[95vh] md:h-[85vh] overflow-hidden p-0 gap-0">
         <DialogTitle className="sr-only">
           {showTech ? 'Tecnologia de Ponta a Ponta' : 'Demonstração do Funcionário Digital'}
         </DialogTitle>
@@ -97,16 +95,16 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
           // TELA DE DEMONSTRAÇÃO
           <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
             {/* Lado Esquerdo */}
-            <div className="p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-border overflow-y-auto">
-              <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-2">
+            <div className="p-4 md:p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-border overflow-y-auto">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-2">
                 Escolha um nicho para ver o <span className="text-violet">Funcionário Digital</span> em ação
               </h2>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                 Veja como nosso agente de IA atende, agenda e converte clientes automaticamente via WhatsApp
               </p>
               
               {/* Botões de Nicho */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3 mb-4 md:mb-6">
                 {nichos.map((nicho) => {
                   const Icon = nicho.icon;
                   return (
@@ -114,22 +112,22 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
                       key={nicho.id}
                       onClick={() => setSelectedNiche(nicho.id)}
                       className={cn(
-                        "flex flex-col items-center gap-2 p-4 rounded-xl border transition-all duration-200",
+                        "flex flex-col items-center gap-1.5 md:gap-2 p-3 md:p-4 rounded-xl border transition-all duration-200",
                         selectedNiche === nicho.id
                           ? "border-violet bg-violet/10 text-violet"
                           : "border-border bg-muted/30 hover:border-violet/50 hover:bg-violet/5"
                       )}
                     >
-                      <Icon className="w-6 h-6" />
-                      <span className="text-xs font-medium text-center">{nicho.label}</span>
+                      <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                      <span className="text-[10px] md:text-xs font-medium text-center">{nicho.label}</span>
                     </button>
                   );
                 })}
               </div>
               
               {/* Texto de personalização */}
-              <div className="bg-muted/30 rounded-xl p-4 border border-border">
-                <p className="text-sm text-muted-foreground">
+              <div className="bg-muted/30 rounded-xl p-3 md:p-4 border border-border">
+                <p className="text-xs md:text-sm text-muted-foreground">
                   <span className="text-violet font-semibold">Não se limita a esses nichos!</span> Nossa IA é 
                   personalizada especialmente para cada segmento de negócio. Seja qual for sua área de atuação, 
                   desenvolvemos uma solução sob medida que entende as particularidades do seu mercado.
@@ -138,7 +136,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
               
               {/* Botão para ver tecnologia */}
               <Button 
-                className="w-full mt-4 bg-transparent border border-violet/30 text-foreground hover:bg-violet hover:text-white hover:border-violet transition-all"
+                className="w-full mt-3 md:mt-4 bg-transparent border border-violet/30 text-foreground hover:bg-violet hover:text-white hover:border-violet transition-all"
                 onClick={() => setShowTech(true)}
               >
                 Conhecer a Tecnologia
@@ -147,19 +145,19 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
             </div>
             
             {/* Lado Direito */}
-            <div className="p-6 lg:p-8 bg-muted/10 overflow-y-auto">
+            <div className="p-4 md:p-6 lg:p-8 bg-muted/10 overflow-y-auto flex flex-col">
               <div className="flex items-center gap-2 mb-2">
-                <MessageCircle className="w-5 h-5 text-violet" />
-                <h3 className="text-lg font-semibold text-foreground">Conversa em Tempo Real</h3>
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 text-violet" />
+                <h3 className="text-base md:text-lg font-semibold text-foreground">Conversa em Tempo Real</h3>
               </div>
               
               {/* Slider de frases */}
-              <div className="h-12 mb-4 overflow-hidden relative">
+              <div className="h-10 md:h-12 mb-3 md:mb-4 overflow-hidden relative">
                 {frases.map((frase, idx) => (
                   <p
                     key={idx}
                     className={cn(
-                      "text-sm text-muted-foreground absolute inset-x-0 transition-all duration-500",
+                      "text-xs md:text-sm text-muted-foreground absolute inset-x-0 transition-all duration-500",
                       currentFrase === idx 
                         ? "opacity-100 translate-y-0" 
                         : "opacity-0 translate-y-4"
@@ -171,14 +169,16 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
               </div>
               
               {/* Simulação de Chat */}
-              <ChatSimulation niche={selectedNiche} />
+              <div className="flex-1 flex items-center justify-center">
+                <ChatSimulation niche={selectedNiche} />
+              </div>
             </div>
           </div>
         ) : (
           // TELA DE TECNOLOGIA
-          <div className="p-6 lg:p-8 overflow-y-auto h-full">
+          <div className="p-4 md:p-6 lg:p-8 overflow-y-auto h-full">
             {/* Header com botão voltar */}
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
               <Button 
                 variant="ghost" 
                 size="icon"
@@ -188,40 +188,40 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
                 <ArrowLeft className="w-5 h-5" />
               </Button>
               <div>
-                <h2 className="text-xl lg:text-2xl font-bold text-foreground">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground">
                   Tecnologia de <span className="text-violet">Ponta a Ponta</span>
                 </h2>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs md:text-sm text-muted-foreground">
                   Toda a infraestrutura empresarial que grandes corporações usam, agora disponível para o seu negócio
                 </p>
               </div>
             </div>
             
             {/* Cards de Tecnologia */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
               {tecnologias.map((tech, idx) => {
                 const Icon = tech.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-border bg-muted/30 hover:border-violet/30 hover:bg-violet/5 transition-all duration-200"
+                    className="p-3 md:p-4 rounded-xl border border-border bg-muted/30 hover:border-violet/30 hover:bg-violet/5 transition-all duration-200"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-violet/10 flex items-center justify-center mb-3">
-                      <Icon className="w-5 h-5 text-violet" />
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-violet/10 flex items-center justify-center mb-2 md:mb-3">
+                      <Icon className="w-4 h-4 md:w-5 md:h-5 text-violet" />
                     </div>
-                    <h4 className="font-semibold text-foreground text-sm mb-1">{tech.title}</h4>
-                    <p className="text-xs text-muted-foreground">{tech.desc}</p>
+                    <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">{tech.title}</h4>
+                    <p className="text-[10px] md:text-xs text-muted-foreground">{tech.desc}</p>
                   </div>
                 );
               })}
             </div>
             
             {/* CTA Final */}
-            <div className="bg-gradient-to-r from-violet/10 to-violet/5 rounded-2xl p-6 lg:p-8 border border-violet/20 text-center">
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+            <div className="bg-gradient-to-r from-violet/10 to-violet/5 rounded-2xl p-4 md:p-6 lg:p-8 border border-violet/20 text-center">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2">
                 Pare de <span className="text-violet">Perder Clientes</span>
               </h3>
-              <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6 max-w-lg mx-auto">
                 Cada minuto sem atendimento automático é uma oportunidade perdida. 
                 Transforme seu atendimento agora.
               </p>
@@ -240,10 +240,10 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-violet"></span>
                 </span>
-                <span className="text-sm font-medium text-violet">
+                <span className="text-xs md:text-sm font-medium text-violet">
                   Oferta por tempo limitado
                 </span>
-                <span className="text-sm text-violet/80">
+                <span className="text-xs md:text-sm text-violet/80">
                   30 dias grátis para novos clientes
                 </span>
               </div>
