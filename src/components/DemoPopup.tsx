@@ -86,7 +86,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-6xl h-[95vh] md:h-[85vh] overflow-hidden p-0 gap-0">
+      <DialogContent className="max-w-6xl max-h-[95vh] md:max-h-[85vh] overflow-y-auto p-0 gap-0">
         <DialogTitle className="sr-only">
           {showTech ? 'Tecnologia de Ponta a Ponta' : 'Demonstração do Funcionário Digital'}
         </DialogTitle>

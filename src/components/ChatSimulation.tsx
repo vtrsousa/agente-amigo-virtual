@@ -97,7 +97,7 @@ const ChatSimulation = ({ niche }: ChatSimulationProps) => {
   }, [visibleMessages, isTyping]);
 
   return (
-    <div className="mx-auto w-full max-w-[260px] sm:max-w-[280px] md:max-w-[320px]">
+    <div className="mx-auto w-full max-w-[260px] sm:max-w-[280px] md:max-w-[280px]">
       {/* Phone Frame */}
       <div className="relative bg-zinc-900 rounded-[2.5rem] p-2 shadow-2xl border-4 border-zinc-700">
         {/* Dynamic Island / Notch */}
