@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+const WHATSAPP_LINK = "https://wa.me/5543984168411?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Koraflow.";
+
 const CTA = () => {
   return (
     <section className="py-24 relative overflow-hidden">
@@ -24,7 +26,7 @@ const CTA = () => {
             <Button 
               size="lg" 
               className="shadow-glow hover:shadow-[0_0_60px_hsl(var(--violet)/0.4)] px-10 py-6 text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
-              onClick={() => window.open('https://w.app/koraflow', '_blank')}
+              onClick={() => window.open(WHATSAPP_LINK, '_blank')}
             >
               Falar com Especialista
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

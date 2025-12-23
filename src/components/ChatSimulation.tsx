@@ -13,60 +13,98 @@ type Conversations = {
 
 const conversations: Conversations = {
   clinica: [
-    { role: 'cliente', text: 'Olá! Gostaria de agendar uma consulta' },
-    { role: 'kora', text: 'Olá! 😊 Sou a Kora, assistente virtual da clínica. Ficarei feliz em ajudar! Qual especialidade você procura?' },
-    { role: 'cliente', text: 'Dermatologista, por favor' },
-    { role: 'kora', text: 'Perfeito! Temos horários disponíveis para Dra. Maria Silva. Qual dia seria melhor? Temos vagas para terça (14h ou 16h) e quinta (10h ou 15h)' },
-    { role: 'cliente', text: 'Quinta às 10h seria ótimo!' },
-    { role: 'kora', text: 'Excelente! ✅ Agendado para quinta-feira às 10h com Dra. Maria Silva. Enviarei um lembrete 24h antes. Posso ajudar em algo mais?' }
+    { role: 'cliente', text: 'Oi, boa tarde!' },
+    { role: 'kora', text: 'Oi! Boa tarde! 😊 Aqui é a Kora, assistente virtual da clínica. Tudo bem com você?' },
+    { role: 'cliente', text: 'Tudo sim, obrigada! Queria agendar uma consulta' },
+    { role: 'kora', text: 'Que bom que está tudo bem! 💜 Fico feliz em te ajudar. Você já é paciente aqui conosco ou seria sua primeira consulta?' },
+    { role: 'cliente', text: 'Primeira vez, vim por indicação de uma amiga' },
+    { role: 'kora', text: 'Ahhh que maravilha! Indicação é sempre a melhor propaganda, né? 😄 Qual especialidade você está buscando?' },
+    { role: 'cliente', text: 'Dermatologista, tenho tido alguns problemas de pele' },
+    { role: 'kora', text: 'Entendi! Imagino como isso pode ser incômodo... A Dra. Maria Silva é excelente e super querida pelos pacientes. Ela é especialista justamente nesses casos.' },
+    { role: 'kora', text: 'Deixa eu ver os horários disponíveis pra você... 🙌 Olha, consegui encaixar! Terça às 14h ou 16h, ou quinta às 10h. Qual fica melhor na sua agenda?' },
+    { role: 'cliente', text: 'Quinta às 10h seria perfeito!' },
+    { role: 'kora', text: 'Maravilha! ✅ Agendado quinta-feira às 10h com Dra. Maria Silva. Vou te mandar um lembrete pelo WhatsApp 24h antes pra você não esquecer, tá?' },
+    { role: 'kora', text: 'Ah, e qualquer coisa que precisar antes da consulta, é só me chamar aqui! Estou sempre por aqui. Cuide-se! 💜' }
   ],
   advocacia: [
-    { role: 'cliente', text: 'Boa tarde! Preciso de uma consulta sobre direito trabalhista' },
-    { role: 'kora', text: 'Boa tarde! 😊 Sou a Kora, assistente do escritório. Temos especialistas em direito trabalhista. Pode me contar brevemente sobre o caso?' },
+    { role: 'cliente', text: 'Boa tarde! Preciso de uma orientação jurídica' },
+    { role: 'kora', text: 'Boa tarde! 😊 Aqui é a Kora, assistente do escritório. Tudo bem com você? Como posso te ajudar hoje?' },
+    { role: 'cliente', text: 'Tudo bem sim. É sobre direito trabalhista' },
+    { role: 'kora', text: 'Certo! Olha, esse é um dos nossos fortes aqui no escritório. Pode ficar tranquilo que você está em boas mãos. Me conta um pouquinho sobre a situação?' },
     { role: 'cliente', text: 'Fui demitido sem justa causa e não recebi a rescisão completa' },
-    { role: 'kora', text: 'Entendo sua situação. O Dr. Carlos Mendes é especialista nesse tipo de caso. Posso agendar uma consulta inicial? Temos horários segunda às 14h ou quarta às 10h' },
-    { role: 'cliente', text: 'Segunda às 14h está ótimo' },
-    { role: 'kora', text: 'Perfeito! ✅ Consulta agendada com Dr. Carlos Mendes, segunda às 14h. Traga documentos como carteira de trabalho e contracheques. Até lá!' }
+    { role: 'kora', text: 'Puxa, que situação chata... 😔 Infelizmente isso é mais comum do que deveria. Mas a boa notícia é que você tem direitos garantidos por lei.' },
+    { role: 'kora', text: 'O Dr. Carlos Mendes é nosso especialista nesse tipo de caso e tem um índice de sucesso altíssimo. Posso agendar uma consulta inicial pra vocês conversarem?' },
+    { role: 'cliente', text: 'Sim, por favor! Quanto antes melhor' },
+    { role: 'kora', text: 'Perfeito! Entendo a urgência. Deixa eu ver aqui... Temos segunda às 14h ou quarta às 10h. Qual fica melhor pra você?' },
+    { role: 'cliente', text: 'Segunda às 14h' },
+    { role: 'kora', text: 'Ótimo! ✅ Consulta agendada com Dr. Carlos, segunda às 14h. Dica: traga a carteira de trabalho, contracheques e qualquer documento relacionado, ok?' },
+    { role: 'kora', text: 'Fica tranquilo que vamos te ajudar a resolver isso! Qualquer dúvida, estou por aqui. Até segunda! 💜' }
   ],
   imobiliaria: [
-    { role: 'cliente', text: 'Olá! Estou procurando um apartamento para alugar' },
-    { role: 'kora', text: 'Olá! 😊 Sou a Kora da imobiliária. Terei prazer em ajudar! Qual região você tem preferência e quantos quartos precisa?' },
-    { role: 'cliente', text: 'Centro, 2 quartos, até R$ 2.500' },
-    { role: 'kora', text: 'Ótimo! Temos 3 opções que se encaixam: um no Edifício Aurora (R$ 2.200), outro na Rua das Flores (R$ 2.400) e um reformado na Av. Central (R$ 2.500). Quer agendar visitas?' },
-    { role: 'cliente', text: 'Sim! Pode ser amanhã?' },
-    { role: 'kora', text: 'Perfeito! ✅ Agendei visitas para amanhã às 10h, 11h e 12h respectivamente. Nosso corretor João entrará em contato para confirmar. Sucesso na busca!' }
+    { role: 'cliente', text: 'Olá! Estou procurando um apartamento' },
+    { role: 'kora', text: 'Olá! 😊 Aqui é a Kora da imobiliária. Tudo bem? Que legal que está buscando um novo lar! É pra alugar ou comprar?' },
+    { role: 'cliente', text: 'Alugar. Preciso de 2 quartos' },
+    { role: 'kora', text: 'Entendi! E qual região você tem preferência? Pergunto porque isso faz toda diferença no dia a dia, né? Trabalho, escola, essas coisas...' },
+    { role: 'cliente', text: 'Centro, até R$ 2.500 se possível' },
+    { role: 'kora', text: 'Boa escolha! O centro tem tudo pertinho. Deixa eu ver aqui o que temos de bom pra você... 🏠' },
+    { role: 'kora', text: 'Olha, achei 3 opções ótimas: um no Edifício Aurora (R$ 2.200, reformado), outro na Rua das Flores (R$ 2.400, com varanda) e um na Av. Central (R$ 2.500, mobiliado). Algum te interessou?' },
+    { role: 'cliente', text: 'Os três parecem bons! Posso visitar?' },
+    { role: 'kora', text: 'Claro! É o melhor jeito de decidir mesmo. Posso agendar as 3 visitas no mesmo dia pra facilitar. Que tal amanhã de manhã?' },
+    { role: 'cliente', text: 'Perfeito, pode ser!' },
+    { role: 'kora', text: 'Maravilha! ✅ Agendei às 10h, 11h e 12h. O corretor João vai te acompanhar - ele conhece tudo sobre a região. Vai te ligar pra confirmar!' },
+    { role: 'kora', text: 'Tenho certeza que você vai encontrar o apê ideal! Qualquer dúvida, é só chamar. Boa sorte! 🏡💜' }
   ],
   estetica: [
-    { role: 'cliente', text: 'Oi! Quero agendar uma limpeza de pele' },
-    { role: 'kora', text: 'Oi! 😊 Sou a Kora, assistente da clínica de estética. Perfeito! Temos limpeza de pele profunda e express. Qual você prefere?' },
-    { role: 'cliente', text: 'A profunda, por favor. Quanto tempo dura?' },
-    { role: 'kora', text: 'A limpeza profunda dura cerca de 1h30 e inclui extração, máscara e hidratação. Temos horários quinta às 15h ou sábado às 10h. Qual prefere?' },
+    { role: 'cliente', text: 'Oi! Quero saber sobre limpeza de pele' },
+    { role: 'kora', text: 'Oi! 😊 Aqui é a Kora da clínica de estética. Tudo bem com você? Que bom que veio falar comigo! Você já fez limpeza de pele antes?' },
+    { role: 'cliente', text: 'Já fiz uma vez, mas faz tempo' },
+    { role: 'kora', text: 'Ah, entendi! Olha, é super importante fazer com regularidade, sabia? A pele agradece demais! 💆‍♀️ Temos duas opções: a express (45min) e a profunda (1h30). Qual te interessa mais?' },
+    { role: 'cliente', text: 'A profunda parece melhor. O que inclui?' },
+    { role: 'kora', text: 'Ótima escolha! A profunda é completa: higienização, esfoliação, extração cuidadosa, máscara específica pro seu tipo de pele e hidratação. Você sai de lá renovada! ✨' },
+    { role: 'kora', text: 'E o melhor: esse mês estamos com 15% de desconto pra novos clientes. Aproveita que é por tempo limitado!' },
+    { role: 'cliente', text: 'Que ótimo! Quero agendar então' },
+    { role: 'kora', text: 'Perfeito! Deixa eu ver os melhores horários... Temos quinta às 15h ou sábado às 10h. Qual prefere?' },
     { role: 'cliente', text: 'Sábado às 10h!' },
-    { role: 'kora', text: 'Maravilha! ✅ Agendado para sábado às 10h. Dica: venha sem maquiagem para melhores resultados. Enviarei lembrete na sexta. Até lá! 💆‍♀️' }
+    { role: 'kora', text: 'Maravilha! ✅ Agendado sábado às 10h. Dica de ouro: venha sem maquiagem pra gente aproveitar melhor o procedimento, ok? Vou te lembrar na sexta!' },
+    { role: 'kora', text: 'Vai ficar com a pele incrível! Qualquer dúvida, me chama. Até sábado! 💜' }
   ],
   corretora: [
-    { role: 'cliente', text: 'Olá, preciso de um seguro para meu carro' },
-    { role: 'kora', text: 'Olá! 😊 Sou a Kora da corretora. Vou te ajudar a encontrar o melhor seguro! Qual modelo e ano do veículo?' },
-    { role: 'cliente', text: 'Honda Civic 2022' },
-    { role: 'kora', text: 'Excelente escolha! Para o Civic 2022, temos opções a partir de R$ 180/mês. Você prefere cobertura básica ou completa com carro reserva?' },
-    { role: 'cliente', text: 'Completa com carro reserva, por favor' },
-    { role: 'kora', text: 'Perfeito! ✅ Preparei 3 cotações das melhores seguradoras. Posso agendar uma ligação com nosso corretor para explicar os detalhes? Leva só 10 minutos!' }
+    { role: 'cliente', text: 'Olá, preciso fazer um seguro pro carro' },
+    { role: 'kora', text: 'Olá! 😊 Aqui é a Kora da corretora. Tudo bem? Que bom que veio falar comigo! Proteger o carro é fundamental hoje em dia, né?' },
+    { role: 'cliente', text: 'Verdade! É um Honda Civic 2022' },
+    { role: 'kora', text: 'Olha, excelente carro! 🚗 E você está certo em querer proteger. Me conta: você usa mais pra trabalho ou lazer? Pergunto porque influencia na cotação.' },
+    { role: 'cliente', text: 'Mais pra trabalho, rodo bastante' },
+    { role: 'kora', text: 'Entendi! Então faz sentido uma cobertura mais completa. Tenho opções a partir de R$ 180/mês. Você prefere o básico ou completo com carro reserva e assistência 24h?' },
+    { role: 'cliente', text: 'Completo, preciso do carro reserva mesmo' },
+    { role: 'kora', text: 'Perfeita escolha! Pra quem roda bastante, o carro reserva é essencial. Não pode ficar na mão, né?' },
+    { role: 'kora', text: 'Preparei 3 cotações das melhores seguradoras pra você comparar. Mas antes: você já teve sinistro ou é motorista há quanto tempo? Isso pode dar desconto! 💰' },
+    { role: 'cliente', text: 'Nunca tive sinistro, dirijo há 8 anos' },
+    { role: 'kora', text: 'Perfeito! Isso te dá um baita desconto! ✅ Posso agendar uma ligação rápida com nosso corretor pra fechar os detalhes? Leva só 10 minutinhos.' },
+    { role: 'kora', text: 'Ele explica tudo certinho e você contrata na hora se quiser. Qual horário é bom pra você? 💜' }
   ],
   oficina: [
-    { role: 'cliente', text: 'Boa tarde! Meu carro está fazendo um barulho estranho' },
-    { role: 'kora', text: 'Boa tarde! 😊 Sou a Kora da oficina. Entendo sua preocupação! O barulho é ao frear, acelerar ou em baixa velocidade?' },
+    { role: 'cliente', text: 'Boa tarde! Meu carro está com um barulho estranho' },
+    { role: 'kora', text: 'Boa tarde! 😊 Aqui é a Kora da oficina. Tudo bem? Puxa, barulho no carro sempre preocupa mesmo... Me conta mais: onde você está ouvindo esse barulho?' },
     { role: 'cliente', text: 'Quando freio, parece metal raspando' },
-    { role: 'kora', text: 'Isso pode indicar desgaste nas pastilhas de freio - importante verificar logo por segurança! Posso agendar uma avaliação gratuita. Temos vaga amanhã às 8h ou 14h' },
-    { role: 'cliente', text: '8h da manhã está bom!' },
-    { role: 'kora', text: 'Ótimo! ✅ Agendado para amanhã às 8h. A avaliação leva cerca de 30 min e você recebe o orçamento na hora. Qual placa do veículo para registrar?' }
+    { role: 'kora', text: 'Humm, entendi. Olha, pela sua descrição, pode ser as pastilhas de freio. É importante verificar logo por questão de segurança, tá? 🚗' },
+    { role: 'kora', text: 'Mas não se preocupa! É uma das coisas mais comuns que a gente resolve aqui. Qual modelo e ano do seu carro?' },
+    { role: 'cliente', text: 'Fiat Argo 2021' },
+    { role: 'kora', text: 'Ah, conheço bem esse modelo! Trabalhamos muito com ele. A boa notícia é que as peças são fáceis de encontrar e o serviço é rápido.' },
+    { role: 'kora', text: 'Posso agendar uma avaliação gratuita pra amanhã? O mecânico dá uma olhada e já passa o orçamento na hora, sem compromisso. 🔧' },
+    { role: 'cliente', text: 'Pode ser! Qual horário tem?' },
+    { role: 'kora', text: 'Temos vaga às 8h (mais tranquilo) ou às 14h. Qual prefere?' },
+    { role: 'cliente', text: '8h da manhã está ótimo' },
+    { role: 'kora', text: 'Perfeito! ✅ Agendado amanhã às 8h. A avaliação leva uns 30 min. Me passa a placa do veículo pra eu já deixar registrado?' },
+    { role: 'kora', text: 'E fica tranquilo que vamos resolver! Qualquer dúvida antes, é só chamar. Até amanhã! 💜' }
   ]
 };
 
 interface ChatSimulationProps {
   niche: string;
+  autoScroll?: boolean;
 }
 
-const ChatSimulation = ({ niche }: ChatSimulationProps) => {
+const ChatSimulation = ({ niche, autoScroll = true }: ChatSimulationProps) => {
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -80,7 +118,8 @@ const ChatSimulation = ({ niche }: ChatSimulationProps) => {
   useEffect(() => {
     if (visibleMessages < messages.length) {
       setIsTyping(true);
-      const typingDelay = messages[visibleMessages].role === 'kora' ? 1500 : 800;
+      // Delays maiores para parecer mais humano (30+ segundos no total)
+      const typingDelay = messages[visibleMessages].role === 'kora' ? 3000 : 1800;
       
       const timer = setTimeout(() => {
         setIsTyping(false);
@@ -91,10 +130,12 @@ const ChatSimulation = ({ niche }: ChatSimulationProps) => {
     }
   }, [visibleMessages, messages.length]);
 
-  // Auto-scroll when messages appear
+  // Auto-scroll when messages appear (só se autoScroll for true)
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [visibleMessages, isTyping]);
+    if (autoScroll) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [visibleMessages, isTyping, autoScroll]);
 
   return (
     <div className="mx-auto w-full max-w-[260px] sm:max-w-[280px] md:max-w-[280px]">

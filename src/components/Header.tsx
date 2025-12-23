@@ -5,6 +5,8 @@ import { ArrowRight, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+const WHATSAPP_LINK = "https://wa.me/5543984168411?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Koraflow.";
+
 const Header = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -14,7 +16,7 @@ const Header = () => {
   }, []);
 
   const handleStartNow = () => {
-    window.open('https://w.app/koraflow', '_blank');
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   const logo = mounted && resolvedTheme === 'dark' ? logoDark : logoLight;
