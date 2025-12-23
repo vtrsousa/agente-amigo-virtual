@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Play } from "lucide-react";
 import DemoPopup from "./DemoPopup";
 
+const WHATSAPP_LINK = "https://wa.me/5543984168411?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Koraflow.";
+
 const Hero = () => {
   const [showDemo, setShowDemo] = useState(false);
 
@@ -60,11 +62,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="shadow-glow group shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
-                onClick={() => {
-                  const chatButton = document.getElementById('chat-button');
-                  chatButton?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                  setTimeout(() => chatButton?.click(), 300);
-                }}
+                onClick={() => window.open(WHATSAPP_LINK, '_blank')}
               >
                 Começar Agora
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

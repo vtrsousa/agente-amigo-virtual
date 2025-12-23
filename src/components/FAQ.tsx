@@ -8,6 +8,8 @@ import {
 import { ArrowRight } from "lucide-react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
+const WHATSAPP_LINK = "https://wa.me/5543984168411?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Koraflow.";
+
 const FAQ = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: accordionRef, isVisible: accordionVisible } = useScrollAnimation({ threshold: 0.05 });
@@ -90,7 +92,7 @@ const FAQ = () => {
             <Button 
               size="lg"
               className="shadow-glow hover:shadow-[0_0_60px_hsl(var(--violet)/0.4)] px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-semibold group transition-all duration-300 hover:scale-105 shimmer-effect bg-violet hover:bg-violet/90 text-violet-foreground"
-              onClick={() => window.open('https://w.app/koraflow', '_blank')}
+              onClick={() => window.open(WHATSAPP_LINK, '_blank')}
             >
               Falar com Especialista
               <ArrowRight className="ml-2 w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />

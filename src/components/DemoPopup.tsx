@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ChatSimulation from "./ChatSimulation";
+
+const WHATSAPP_LINK = "https://wa.me/5543984168411?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Koraflow.";
 
 const nichos = [
   { id: 'clinica', label: 'Clínica Médica', icon: Stethoscope },
@@ -62,6 +64,8 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
   const [selectedNiche, setSelectedNiche] = useState('clinica');
   const [currentFrase, setCurrentFrase] = useState(0);
   const [showTech, setShowTech] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Slider de frases
   useEffect(() => {
@@ -71,22 +75,36 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  // Reset ao fechar
+  // Reset ao fechar e scroll ao topo ao abrir
   useEffect(() => {
     if (!open) {
       setShowTech(false);
       setSelectedNiche('clinica');
+      setHasInteracted(false);
+    } else {
+      // Reset scroll ao topo quando abre
+      setTimeout(() => {
+        contentRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+      }, 50);
     }
   }, [open]);
 
+  const handleNicheClick = (nichoId: string) => {
+    setSelectedNiche(nichoId);
+    setHasInteracted(true);
+  };
+
   const handleTalkToSpecialist = () => {
     onOpenChange(false);
-    window.open('https://w.app/koraflow', '_blank');
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-6xl max-h-[95vh] md:max-h-[85vh] overflow-y-auto p-0 gap-0 [&>button]:top-2 [&>button]:right-2">
+      <DialogContent 
+        ref={contentRef}
+        className="max-w-6xl max-h-[95vh] md:max-h-[85vh] overflow-y-auto p-0 gap-0 [&>button]:top-2 [&>button]:right-2"
+      >
         <DialogTitle className="sr-only">
           {showTech ? 'Tecnologia de Ponta a Ponta' : 'Demonstração do Funcionário Digital'}
         </DialogTitle>
@@ -110,7 +128,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
                   return (
                     <button
                       key={nicho.id}
-                      onClick={() => setSelectedNiche(nicho.id)}
+                      onClick={() => handleNicheClick(nicho.id)}
                       className={cn(
                         "flex flex-col items-center gap-1.5 md:gap-2 p-3 md:p-4 rounded-xl border transition-all duration-200",
                         selectedNiche === nicho.id
@@ -170,7 +188,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
               
               {/* Simulação de Chat */}
               <div className="flex-1 flex items-center justify-center">
-                <ChatSimulation niche={selectedNiche} />
+                <ChatSimulation niche={selectedNiche} autoScroll={hasInteracted} />
               </div>
             </div>
           </div>
