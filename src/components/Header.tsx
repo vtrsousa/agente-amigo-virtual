@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <img src={logo} alt="Koraflow" className="h-6 md:h-8" />
+            <img src={logo} alt="Koraflow" width={145} height={32} className="object-contain" style={{ width: '145px', height: '32px' }} />
           </div>
           
           <div className="flex items-center gap-2 md:gap-4">

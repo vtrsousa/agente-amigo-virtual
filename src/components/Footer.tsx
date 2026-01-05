@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="Koraflow" className="h-6 md:h-8" />
+            <img src={logo} alt="Koraflow" width={145} height={32} className="object-contain" style={{ width: '145px', height: '32px' }} />
           </div>
           
           {/* Links Rápidos */}
