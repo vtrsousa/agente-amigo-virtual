@@ -66,6 +66,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
   const [showTech, setShowTech] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const phoneSectionRef = useRef<HTMLDivElement>(null);
 
   // Slider de frases
   useEffect(() => {
@@ -92,6 +93,24 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
   const handleNicheClick = (nichoId: string) => {
     setSelectedNiche(nichoId);
     setHasInteracted(true);
+    
+    // Scroll até o celular quando um nicho é clicado
+    setTimeout(() => {
+      if (phoneSectionRef.current && contentRef.current) {
+        const phoneRect = phoneSectionRef.current.getBoundingClientRect();
+        const contentRect = contentRef.current.getBoundingClientRect();
+        const scrollTop = contentRef.current.scrollTop;
+        
+        // Calcula a posição relativa do celular dentro do popup
+        const phoneTop = phoneRect.top - contentRect.top + scrollTop;
+        
+        // Scroll suave até o celular (com um pequeno offset para melhor visualização)
+        contentRef.current.scrollTo({
+          top: phoneTop - 20,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   const handleTalkToSpecialist = () => {
@@ -103,7 +122,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent 
         ref={contentRef}
-        className="max-w-6xl max-h-[95vh] md:max-h-[85vh] overflow-y-auto p-0 gap-0 [&>button]:top-2 [&>button]:right-2"
+        className="max-w-6xl h-[90vh] md:max-h-[85vh] overflow-y-auto p-0 gap-0 [&>button]:top-2 [&>button]:right-2"
       >
         <DialogTitle className="sr-only">
           {showTech ? 'Tecnologia de Ponta a Ponta' : 'Demonstração do Funcionário Digital'}
@@ -111,7 +130,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
         
         {!showTech ? (
           // TELA DE DEMONSTRAÇÃO
-          <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-0">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 min-h-0 h-full">
             {/* Lado Esquerdo - Primeiro no mobile */}
             <div className="p-4 md:p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-border lg:overflow-y-auto order-first">
               <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-2">
@@ -163,7 +182,7 @@ const DemoPopup = ({ open, onOpenChange }: DemoPopupProps) => {
             </div>
             
             {/* Lado Direito - Celular */}
-            <div className="p-4 md:p-6 lg:p-8 bg-muted/10 lg:overflow-y-auto flex flex-col order-last">
+            <div ref={phoneSectionRef} className="p-4 md:p-6 lg:p-8 bg-muted/10 lg:overflow-y-auto flex flex-col order-last">
               <div className="flex items-center gap-2 mb-2">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5 text-violet" />
                 <h3 className="text-base md:text-lg font-semibold text-foreground">Conversa em Tempo Real</h3>

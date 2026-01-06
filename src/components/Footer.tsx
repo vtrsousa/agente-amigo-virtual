@@ -12,7 +12,7 @@ const Footer = () => {
     setMounted(true);
   }, []);
 
-  const logo = mounted && resolvedTheme === 'dark' ? logoDark : logoLight;
+  const logo = mounted && resolvedTheme === "dark" ? logoDark : logoLight;
 
   const quickLinks = [
     { label: "Como Funciona", href: "#como-funciona" },
@@ -27,12 +27,18 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="Koraflow" width={145} height={32} className="object-contain" style={{ width: '145px', height: '32px' }} />
+            <img
+              src={logo}
+              alt="Koraflow"
+              width={145}
+              height={32}
+              className="object-contain"
+              style={{ width: "145px", height: "32px" }}
+            />
           </div>
-          
+
           {/* Links Rápidos */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <h4 className="font-semibold text-sm mb-1">Links Rápidos</h4>
             <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1">
               {quickLinks.map((link) => (
                 <a
@@ -45,33 +51,33 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Copyright */}
           <div className="text-sm text-muted-foreground text-center">
             © 2025 Koraflow. Todos os direitos reservados.
           </div>
-          
+
           {/* Social Links */}
           <div className="flex gap-6">
-            <a 
-              href="https://www.instagram.com/koraflow.ia/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/koraflow.ia/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
-            <a 
-              href="https://www.facebook.com/people/Koraflow/" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/people/Koraflow/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Facebook"
             >
               <Facebook className="w-5 h-5" />
             </a>
-            <a 
+            <a
               href="mailto:contato@koraflow.com.br"
               className="text-muted-foreground hover:text-violet transition-smooth"
               aria-label="Email"
